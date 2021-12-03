@@ -1,5 +1,5 @@
 const express = require("express");
-const { checkId } = require("./projects-middleware");
+const { checkId, validateProject } = require("./projects-middleware");
 const Project = require("./projects-model");
 const router = express.Router();
 
@@ -15,4 +15,9 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", checkId, (req, res, next) => {
   res.status(200).json(req.projFromDb)
 });
+
+router.post('/', validateProject, (req, res, next) => {
+    console.log('hi')
+})
+
 module.exports = router;

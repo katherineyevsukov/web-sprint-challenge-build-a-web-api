@@ -33,4 +33,10 @@ async function checkId(req, res, next) {
   }
 }
 
-module.exports = { checkId };
+function validateProject(req, res, next){
+    (!req.body.name || !req.body.name.trim() || !req.body.description || !req.body.description.trim()) ?
+    next({status: 400, message: 'name and description are required'}) :
+    next()
+}
+
+module.exports = { checkId, validateProject};
