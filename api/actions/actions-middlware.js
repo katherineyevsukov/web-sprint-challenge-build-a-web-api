@@ -26,10 +26,10 @@ function validateAction(req, res, next) {
     : next();
 }
 
-function validateCompletion(req, res, next){
-    req.body.completed === undefined ?
-    next({ status: 400, message: 'completion status required'}) :
-    next()
+function validateCompletion(req, res, next) {
+  req.body.completed === undefined
+    ? next({ status: 400, message: "completion status required" })
+    : next();
 }
 
 module.exports = { checkId, validateAction, validateCompletion };
