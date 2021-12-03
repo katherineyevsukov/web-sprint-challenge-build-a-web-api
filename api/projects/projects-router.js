@@ -1,4 +1,5 @@
 const express = require('express')
+const { checkId } = require('./projects-middleware')
 const Project = require('./projects-model')
 const router = express.Router()
 
@@ -11,4 +12,7 @@ router.get('/', async (req, res, next) => {
     }
 })
 
+router.get('/:id', checkId, (req, res, next) => {
+    console.log('hey')
+})
 module.exports = router
