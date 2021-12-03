@@ -147,7 +147,28 @@ We have provided test data for all the resources.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+>
+>With Node.js, we can write server-side code using JS. This allows us to take full advantage of the processor as JS is a single-threaded and asynchronous language. Additionally, the client and server are using the same language and have access to the same NPM repository. 
+>Express is a node web application framework that extends the functionality of our application. Its benefits include allowing us to build SPA's, building RESTful web services that work with JSON,, and the ability to add middleware to routing.
+>
 1. Understand and explain the use of Middleware.
+>
+>Middleware is something that is built in to express, but there are also third party libraries we can use, or we may write our own. Middleware intercepts a process, runs a specific function at that interception point and then either allows the process to continue or may end the process if need be. Well-written code should utilize middleware as it allows for better organization through separation of concerns, better data management, and greater overall efficiency.
+>
 1. The basic principles of the REST architectural style.
+>
+> 1. Client-server architecture
+1. Stateless
+1. Cacheable
+1. Uniform Interface
+1. Layered System
+1. Code on Demand
+>
 1. Understand and explain the use of Express Routers.
+>
+>Express router is a built in form of middleware. When a request comes through, it is forwarded to a sub-handler depending on the path and request type. 
+>
 1. Describe tooling used to manually test the correctness of an API.
+>
+>There are a wide range of open-source tools we can use to manually test an API. Some provide a GUI, while others can be used from the command line. Postman is a a great GUI we can use, while HTTPie  or curl can be used from the command line. With these tools we can plug in our endpoints and make sure we our getting the proper responses back based on what we do or do not send in through the request.
+>
