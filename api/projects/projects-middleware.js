@@ -43,4 +43,10 @@ function validateProject(req, res, next) {
     : next();
 }
 
-module.exports = { checkId, validateProject };
+function validateCompletion(req, res, next){
+    req.body.completed === undefined ?
+    next({ status: 400, message: 'completion status required'}) :
+    next()
+}
+
+module.exports = { checkId, validateProject, validateCompletion };
