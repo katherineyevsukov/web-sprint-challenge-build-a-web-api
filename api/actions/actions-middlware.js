@@ -13,4 +13,17 @@ async function checkId(req, res, next) {
   }
 }
 
-module.exports = { checkId };
+function validateAction(req, res, next) {
+  !req.body.project_id ||
+  !req.body.description ||
+  !req.body.description.trim() ||
+  !req.body.notes ||
+  !req.body.notes.trim()
+    ? next({
+        status: 400,
+        message: "project id, description, and notes are all required",
+      })
+    : next();
+}
+
+module.exports = { checkId, validateAction };
