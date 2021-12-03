@@ -34,4 +34,14 @@ router.put("/:id", validateProject, validateCompletion, checkId, async (req, res
   }
 });
 
+router.delete("/:id", checkId, async (req, res, next) => {
+    try {
+        const removed = await Project.remove(req.params.id)
+        removed === 1 ? res.status(200).json(req.projFromDb) :
+        res.send(`${removed} records were deleted`)
+    } catch(err) {
+        next(err)
+    }
+})
+
 module.exports = router;
