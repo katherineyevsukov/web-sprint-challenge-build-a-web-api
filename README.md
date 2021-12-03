@@ -157,7 +157,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 >
 1. The basic principles of the REST architectural style.
 >
-> 1. Client-server architecture
+1. Client-server architecture
 1. Stateless
 1. Cacheable
 1. Uniform Interface
